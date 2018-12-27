@@ -4,8 +4,9 @@ import Film from './../Film';
 import Hoc from './../Hoc';
 import './App.css';
 
-const filmUrl = 'http://www.omdbapi.com/?i=tt1285016&apikey=2847dfc8';
-const HocFilm = Hoc(filmUrl)(Film);
+const filmUrl = 'https://api.themoviedb.org/3/movie/297802?api_key=b227c496d142da161ca31bdf56e487d8';
+const imgUrl = 'https://image.tmdb.org/t/p/original/';
+const HocFilm = Hoc(filmUrl, imgUrl)(Film);
 
 class App extends Component {
 

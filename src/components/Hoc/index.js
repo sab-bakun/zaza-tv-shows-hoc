@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const HocFilm = (url) => 
+const HocFilm = (url, imgUrl) => 
     (FilmComponent) => 
         class extends Component {
             constructor(props) {
@@ -16,11 +16,11 @@ const HocFilm = (url) =>
                     .then((response) => response.json())
                     .then((data) => this.setState({ 
                         film: {
-                            name: data.Title,
-                            year: data.Year,
-                            country: data.Country,
-                            description: data.Plot,
-                            banner: data.Poster
+                            name: data.original_title,
+                            year: (new Date(data.release_date)).getFullYear(),
+                            country: data.production_countries[0].name,
+                            description: data.overview,
+                            banner: imgUrl + data.backdrop_path
                         }
                     }));
             }
