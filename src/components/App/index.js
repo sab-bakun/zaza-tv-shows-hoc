@@ -5,7 +5,7 @@ import Hoc from './../Hoc';
 import './App.css';
 
 const filmUrl = 'http://www.omdbapi.com/?i=tt1285016&apikey=2847dfc8';
-const HocFilm = Hoc(filmUrl)(Film)
+const HocFilm = Hoc(filmUrl)(Film);
 
 class App extends Component {
 
